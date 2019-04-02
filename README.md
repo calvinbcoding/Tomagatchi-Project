@@ -8,7 +8,7 @@ Let's use our front-end web development skills to create a "living" pet! We'll u
 ### Requirements
   
 * Create a repo for your tomagotchi pet
-* make a commit after you finish each one of the following
+* make a commit afterq you finish each one of the following
 * Create a Class (JS Class, look at your notes if your forget) for your tomagotchi
 * Instatiate your Tomagotchi
 * Display a character of your choice on the screen to represent your pet

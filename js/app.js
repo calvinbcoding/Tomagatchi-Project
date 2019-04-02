@@ -1,3 +1,9 @@
+let timePassing;
+let seconds = 0;
+
+
+
+
 class Tomagotchi {
     constructor(name) {
       this.name = name;
@@ -6,30 +12,61 @@ class Tomagotchi {
       this.boredom = 0;
       this.age = 0;
     }
-    hasDied() {
-      if(this.hunger >= 10) {
-        console.log(this.name + " has starved to death.");
-      } else if(this.age >= 10) {
-        console.log(this.name + " lived a long and happy life; dying of old age");
-      } else if(this.boredom >= 10) {
-        console.log(this.name + " was bored to death.");
-      } else if(this.sleepiness >= 10) {
-        console.log(this.name + " went on a crack binge and died of sleep deprivation.");
+}
+
+let myPet = new Tomagotchi();
+    
+function hungerFunc() {
+      if(myPet.hunger >= 10) {
+        console.log(myPet.name + " has starved to death.");
       }
+    }  
+function sleepyFunc() {
+      if(myPet.sleepiness >= 10) {
+        console.log(myPet.name + " went on a crack binge and died of sleep deprivation.");
+      }
+    }    
+function boredFunc() {
+      if(myPet.boredom >= 10) {
+        console.log(myPet.name + " was bored to death.")}
+      
+      }
+      
+function diedOfOldAge () {
+      if(myPet.age >= 10) {
+        console.log(myPet.name + " lived a long and happy life");
+           // prompt('Write an Obituary');<--?
+      
+      } 
     }
-  }
+
+
+const ageIncreases= () => {
+        seconds++;
+        $(‘.time’).text(seconds)
+        if(seconds % 10 === 0){
+            age++;
+            $(‘.age’).text(age);
+        }
+     }  
+$('.submit').click(function(){
+        timePassing = setInterval(ageGoesUp, 1000);
+     })
+$('.startover').click(function(){
+        clearInterval(timePassing);
+     })
   
-  const tomagotchiFactory = {
-    tomagotchis: [],
-    generateTomagotchi(name) {
-      const newTomagotchi = new Tomagotchi(name)
-      this.tomagotchis.push(newTomagotchi);
-      return newTomagotchi;
-    },
-    findTomagotchi(index) {
-      return this.tomagotchis[index],
-        console.log(this.tomagotchis[index]);
-    }
-  }
+//   const tomagotchiFactory = {
+//     tomagotchis: [],
+//     generateTomagotchi(name) {
+//       const newTomagotchi = new Tomagotchi(name)
+//       this.tomagotchis.push(newTomagotchi);
+//       return newTomagotchi;
+//     },
+//     findTomagotchi(index) {
+//       return this.tomagotchis[index],
+//         console.log(this.tomagotchis[index]);
+//     }
+//   }
   
   
