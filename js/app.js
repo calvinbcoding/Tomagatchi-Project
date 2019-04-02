@@ -14,7 +14,7 @@ class Tomagotchi {
     }
 }
 
-let myPet = new Tomagotchi();
+let myPet = new Tomagotchi(name);
     
 function hungerFunc() {
       if(myPet.hunger >= 10) {
@@ -32,26 +32,29 @@ function boredFunc() {
       
       }
       
-function diedOfOldAge () {
-      if(myPet.age >= 10) {
-        console.log(myPet.name + " lived a long and happy life");
+// function diedOfOldAge () {
+//       if(myPet.age >= 10) {
+//         console.log(myPet.name + " lived a long and happy life");
            // prompt('Write an Obituary');<--?
       
-      } 
-    }
+    //   } 
+    // }
 
 
-const ageIncreases= () => {
+const secondsGoUp = () => {
         seconds++;
-        $('.time').text(seconds)
+        console.log(seconds);
+
         if(seconds % 10 === 0){
-            age++;
-            $('.age').text(age);
+            myPet.age++;
+            $('.age').text(myPet.age);
         }
      }  
 $('.submit').click(function(){
-        timePassing = setInterval(ageGoesUp, 1000);
+    $('.time').text(seconds);
+        timePassing = setInterval(secondsGoUp, 300);
      })
+    
 $('.attention').on('click', () => {
     myPet.boredom =+ 1
 })
