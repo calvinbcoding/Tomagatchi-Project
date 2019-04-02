@@ -43,15 +43,24 @@ function diedOfOldAge () {
 
 const ageIncreases= () => {
         seconds++;
-        $(‘.time’).text(seconds)
+        $('.time').text(seconds)
         if(seconds % 10 === 0){
             age++;
-            $(‘.age’).text(age);
+            $('.age').text(age);
         }
      }  
 $('.submit').click(function(){
         timePassing = setInterval(ageGoesUp, 1000);
      })
+$('.attention').on('click', () => {
+    myPet.boredom =+ 1
+})
+$('.sleep').on('click', () => {
+    myPet.sleepiness =+ 1
+})
+$('.food').on('click', () => {
+    myPet.hunger =+ 1
+})
 $('.startover').click(function(){
         clearInterval(timePassing);
      })
