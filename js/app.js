@@ -15,6 +15,7 @@ class Tomagotchi {
 }
 
 let myPet = new Tomagotchi(name);
+
     
 function hungerFunc() {
       if(myPet.hunger >= 10) {
@@ -48,24 +49,45 @@ const secondsGoUp = () => {
         if(seconds % 10 === 0){
             myPet.age++;
             $('.age').text(myPet.age);
+
+        if(seconds % 5 ===0){
+          myPet.boredom++;
+          $('.boredom').text(myPet.boredom);
+        
+        if(seconds % 6 === 0){
+          myPet.hunger++;
+          $('.hunger').text(myPet.hunger);
+
+        if(seconds % 4 === 0){
+          myPet.sleepiness++;
+          $('.sleepiness').text(myPet.sleepiness);
+        }
+        }
+        }
         }
      }  
 $('.submit').click(function(){
     $('.time').text(seconds);
         timePassing = setInterval(secondsGoUp, 300);
-     })
+        $('.name').val('');
+        $('#pet-name').text('Name: ' + myPet.name);
+      })
     
 $('.attention').on('click', () => {
-    myPet.boredom =+ 1
+    myPet.boredom -- 
 })
 $('.sleep').on('click', () => {
-    myPet.sleepiness =+ 1
+    myPet.sleepiness -- 
 })
 $('.food').on('click', () => {
-    myPet.hunger =+ 1
+    myPet.hunger -- 
 })
 $('.startover').click(function(){
         clearInterval(timePassing);
+     })
+  let $it;
+     $(document).on('click', (e) => {
+       $it = $(e.target);
      })
   
 //   const tomagotchiFactory = {
@@ -80,5 +102,5 @@ $('.startover').click(function(){
 //         console.log(this.tomagotchis[index]);
 //     }
 //   }
-  
+
   
