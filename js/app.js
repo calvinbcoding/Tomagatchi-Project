@@ -56,7 +56,7 @@ const secondsGoUp = () => {
      }  
 $('.submit').click(function() {
     $('.age').text(seconds * 10);
-      timePassing = setInterval(secondsGoUp, 1000);
+      timePassing = setInterval(secondsGoUp, 12);
 
 $('.name').val('');
         $('#pet-name').text('Name: ' + myPet.name);
@@ -75,4 +75,4 @@ $('.rick').fadeToggle('click')
 
 $('.startover').on('click', () => {
         clearInterval(timepassing)}
-
+)
