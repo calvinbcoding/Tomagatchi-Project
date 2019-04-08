@@ -6,16 +6,17 @@ h1 {
 }
 
 
-
 body {
 	background-color: aqua
  /* background-image: "url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.wallpapersafari.com%2F61%2F44%2FiLS4rb.jpg&imgrefurl=https%3A%2F%2Fwallpapersafari.com%2Fw%2FiLS4rb&docid=w8T2uvOFltdRLM&tbnid=5Bu2ZxM8S40LzM%3A&vet=10ahUKEwjUrdLosrThAhUEQq0KHfO3CmcQMwhNKA0wDQ..i&w=1920&h=1080&itg=1&bih=618&biw=1264&q=images%20for%20free%20website%20backgrounds&ved=0ahUKEwjUrdLosrThAhUEQq0KHfO3CmcQMwhNKA0wDQ&iact=mrc&uact=8)"
-} */
+ */
+};
+section {
 
 
 
- {
-	display: inline-block;
+ 
+	display: inline-grid;
 	margin: 50px 25px;
 	padding-top: 100px;
 	position: center;
