@@ -7,25 +7,25 @@ let seconds = 0;
 
 
 class Tomagotchi {
-    constructor() {
-      this.name = "name";
-      this.age = 0;
-      this.sleepiness = 0;
-      this.boredom = 0;
-      this.hunger = 0;
-    }
-}
+      name = "name";
+      age = 0;
+      sleepiness = 0;
+      boredom = 0;
+      hunger = 0;
+    };
+
 
 let myPet = new Tomagotchi(name);
 
 
-    if(myPet.boredom >= 10){
+
+    if(myPet.boredom > 10){
       alert(myPet.name + " was bored to death.");
     }
-    if(myPet.sleepiness >= 10){
+    if(myPet.sleepiness > 10){
       console.log(myPet.name + " went on a crack binge and died of sleep deprivation.");
     }
-    if(myPet.hunger >= 10){
+    if(Tomagotchi.hunger > 10){
       console.log(myPet.name + " has starved to death.");
     }
     
@@ -34,64 +34,72 @@ let myPet = new Tomagotchi(name);
 const secondsGoUp = () => {
         seconds++;
         console.log(seconds);
+        console.log(myPet.name);
 
-        if(seconds % 9 === 0)
-          {myPet.age++;
-            $('.age').text('Age: ' + myPet.age)
-            console.log(myPet.name + " is" + myPet.age + "years old")}
-
-        if(seconds % 7 ===0)
+        if(seconds % 14 === 0){
+          myPet.age++;
+          $('.age').text('Age: ' + myPet.age)
+          console.log(myPet.name + " is" + myPet.age + "years old");
+        } if(seconds % 7 ===0)
           {myPet.boredom++;
-          $('.boredom').text('Boredom: ' + myPet.boredom)}
-        
-        if(seconds % 5 === 0)
-          {myPet.hunger++;
-          $('.hunger').text('Hunger: ' + myPet.hunger)}
-
-        if(seconds % 11 === 0)
+          $('.boredom').text('Boredom: ' + myPet.boredom)
+        } if(seconds % 5 === 0){
+          myPet.hunger++;
+          $('.hunger').text('Hunger: ' + myPet.hunger)
+        } if(seconds % 9 === 0){
         {myPet.sleepiness++;
           $('.sleepiness').text('Sleepiness: ' + myPet.sleepiness)}
+        }
+      };
 
-
-    if(myPet.boredom >= 10){
+    if(myPet.boredom >= 1000){
       console.log(myPet.name + " was bored to death.");
     }
-    if(myPet.sleepiness >= 10){
+    if(myPet.sleepiness >= 20){
       console.log(myPet.name + " went on a crack binge and died of sleep deprivation.");
     }
-    if(myPet.hunger >= 10){
+    if(myPet.hunger >= 20){
       console.log(myPet.name + " has starved to death.");
     }
     
-        };
-
-$('.submit').on('click', () => {
+        
+// const startGame = (e) => {
+//   e.preventDefault();
+  //let myPet.name = $('#pet-name').val()
+$('.submit').on('click', (e) => {
+    $(myPet.name).val()
+    $('#pet-name').val(myPet.name);
     $('.age').text(seconds);
       window.timePassing = setInterval(secondsGoUp, 1000)});
 
 
-    // $('#pet-name').text('Name: ' + myPet.name);
-      
-    
-$('.attention').on('click', () => {
-    myPet.boredom --
-  });
+    //  $('#pet-name').text('Name: ' + myPet.name);
+ $('.button').on('click', (e)=>{
+   render(e)
+ }
+ )     
+   
+$('.attention').on('click', (e) => {
+    myPet.boredom--
+});
+  
   // let $it;
   //    $(document).on('click', (e) => {
   //      $it = $(e.target);
   //    })
 
-$('.sleep').on('click', () => {
+$('.sleep').on('click', (e) => {
     myPet.sleepiness -- 
 });
-$('.food').on('click', () => {
+$('.food').on('click', (e) => {
     myPet.hunger -- 
 });
 // $('.Rick').fadeToggle('keypress', () => {
 
 // });
 
-// $('#updatePetBtns').on('click', myPet);
+$('#updatePetBtns').on('click', (e)=>{
+  render(e)} );
 // myPetDied();
 
 const stopInterval = () => {
